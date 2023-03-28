@@ -7,15 +7,12 @@ const cx = classNames.bind(styles);
 const data = "Drag item";
 
 function AddItem(props: any) {
-  const clearItemData = {
-    itemName: "",
-  };
 
-  const [item, setItem] = useState(clearItemData);
+  const [item, setItem] = useState('');
 
   const handleAddItem = () => {
     props.onAddItem(data);
-    setItem(clearItemData);
+    setItem('');
   };
   return (
     <div>
