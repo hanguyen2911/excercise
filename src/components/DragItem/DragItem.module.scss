@@ -8,10 +8,11 @@
   flex-direction: column;
   height: 100vh;
   margin: 15px 50px;
+  overflow: auto;
+  padding: 0;
 }
 
 .item-container {
-
   width: 150px;
   background-color: #f4e1e1;
   border: 1px solid rgb(103, 13, 13);

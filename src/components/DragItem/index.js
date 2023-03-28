@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Draggable from "react-draggable";
 
 import AddItem from "../AddItem";
@@ -9,11 +9,6 @@ const cx = classNames.bind(styles);
 
 function DragItem() {
   const [items, setItems] = useState([]);
-
-  const eventHandler = (e, data) => {
-    console.log("Event Type", e.type);
-    console.log({ e, data });
-  };
   return (
     <>
       <AddItem onAddItem={(item) => setItems([...items, item])} />
@@ -21,7 +16,11 @@ function DragItem() {
         <div className={cx("App")}>
           <div className={cx("container")}>
             {items.map((item, index) => (
-              <Draggable onDrag={eventHandler}>
+              <Draggable
+                bounds="parent"
+    
+                key={index}
+              >
                 <div className={cx("item-container")}>{item}</div>
               </Draggable>
             ))}
